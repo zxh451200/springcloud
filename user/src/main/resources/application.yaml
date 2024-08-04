@@ -7,7 +7,7 @@ spring:
     password: "000000"
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
-    name: order-service-dev
+    name: user-service-dev
   cloud:
     nacos:
       discovery:
@@ -15,8 +15,6 @@ spring:
         access-key: a22b4aed-8233-4fa2-9ced-13222f3a7176
       config:
         server-addr: 192.168.220.159:8848
-
-
         access-key: a22b4aed-8233-4fa2-9ced-13222f3a7176
   config:
     import: nacos:application.yaml
@@ -25,10 +23,12 @@ spring:
 #        server-addr: 127.0.0.1:8848
 
 
-
+feign:
+  okhttp:
+    enable: true
 
 server:
-  port: 8081
+  port: 8083
 #logging:
 #  level:
 #    root: debug

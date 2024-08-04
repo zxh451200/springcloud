@@ -28,5 +28,13 @@ public class OrderController {
         Order order = BeanUtil.copyProperties(userDto, Order.class);
     }
 
+    @Operation(summary = "根据ids活的")
+    @GetMapping("/getIds/{ids}")
+    public void getIds(@PathVariable("ids") String ids) {
+        System.out.println(5566546);
+
+
+    }
+
 
 }
