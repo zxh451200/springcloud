@@ -11,16 +11,14 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.220.159:8848
-        access-key: a22b4aed-8233-4fa2-9ced-13222f3a7176
+        server-addr: 127.0.0.1:8848
+#        server-addr: 192.168.220.159:8848
       config:
-        server-addr: 192.168.220.159:8848
-        access-key: a22b4aed-8233-4fa2-9ced-13222f3a7176
+        server-addr: 127.0.0.1:8848
+#        server-addr: 192.168.220.159:8848
   config:
     import: nacos:application.yaml
-#        access-key: a22b4aed-8233-4fa2-9ced-13222f3a7176
-#        access-key: a22b4aed-8233-4fa2-9ced-13222f3a7176
-#        server-addr: 127.0.0.1:8848
+
 
 
 feign:
