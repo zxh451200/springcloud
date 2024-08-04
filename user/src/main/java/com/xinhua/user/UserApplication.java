@@ -10,7 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 @MapperScan("com.xinhua.user.mapper")
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients(basePackages = "api.client")
 public class UserApplication {
 
     public static void main(String[] args) {

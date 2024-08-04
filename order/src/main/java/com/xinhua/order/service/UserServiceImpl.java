@@ -1,10 +1,10 @@
 package  com.xinhua.order.service;
 
 
-import com.xinhua.order.dto.PageDto;
-import com.xinhua.order.pojo.Order;
+import com.xinhua.order.domain.dto.PageDto;
+import com.xinhua.order.domain.pojo.Order;
 import com.xinhua.order.query.OrderQuery;
-import com.xinhua.order.vo.OrderVo;
+import com.xinhua.order.domain.vo.OrderVo;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

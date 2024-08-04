@@ -1,4 +1,4 @@
-package com.xinhua.user.pojo;
+package com.xinhua.user.domain.pojo;
 
 
 import lombok.Data;

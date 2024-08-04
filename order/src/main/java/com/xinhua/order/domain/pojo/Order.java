@@ -1,4 +1,4 @@
-package  com.xinhua.order.pojo;
+package com.xinhua.order.domain.pojo;
 
 
 import com.xinhua.order.enums.OrderStatus;

@@ -1,4 +1,4 @@
-package com.xinhua.user.dto;
+package com.xinhua.user.domain.dto;
 
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;

@@ -1,22 +1,12 @@
 package com.xinhua.user.service;
 
 
-import cn.hutool.core.collection.CollUtil;
-import cn.hutool.core.util.RandomUtil;
-import com.xinhua.user.feignClient.OrderFeign;
-import com.xinhua.user.dto.UserDto;
-import lombok.RequiredArgsConstructor;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.client.RestTemplate;
+import api.client.OrderFeign;
 
-import java.util.List;
-import java.util.Map;
+import lombok.RequiredArgsConstructor;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
 @Service
 @RequiredArgsConstructor
@@ -36,7 +26,7 @@ public class UserServiceImpl implements UserService {
         orderFeign.getIds();
 /*
 //        第二种
-        String orderServiceStr = "order-service-dev";
+        String orderServiceStr = "order-service";
         List<ServiceInstance> instances = discoveryClient.getInstances(orderServiceStr);
         if (CollUtil.isEmpty(instances)) {
             return;

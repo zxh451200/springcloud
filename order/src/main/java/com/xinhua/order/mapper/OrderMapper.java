@@ -1,6 +1,6 @@
 package  com.xinhua.order.mapper;
 
-import com.xinhua.order.pojo.Order;
+import com.xinhua.order.domain.pojo.Order;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 

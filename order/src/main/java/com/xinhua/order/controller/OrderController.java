@@ -2,8 +2,8 @@ package  com.xinhua.order.controller;
 
 
 import cn.hutool.core.bean.BeanUtil;
-import com.xinhua.order.dto.OrderDto;
-import com.xinhua.order.pojo.Order;
+import com.xinhua.order.domain.dto.OrderDto;
+import com.xinhua.order.domain.pojo.Order;
 import com.xinhua.order.service.OrderService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

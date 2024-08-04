@@ -1,7 +1,7 @@
-package  com.xinhua.order.vo;
+package com.xinhua.order.domain.vo;
 
 import com.xinhua.order.enums.OrderStatus;
-import com.xinhua.order.pojo.OrderInfo;
+import com.xinhua.order.domain.pojo.OrderInfo;
 import lombok.Data;
 
 @Data

@@ -1,4 +1,4 @@
-package com.xinhua.user.pojo;
+package com.xinhua.order.domain.pojo;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
