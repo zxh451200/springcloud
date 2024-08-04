@@ -18,10 +18,15 @@ public class UserController {
 
     private final UserService userService;
 
+    @GetMapping("/test")
+    public Result test() {
+        return Result.success("成功");
+    }
 
     @Operation(summary = "根据ids活的")
     @GetMapping("/getIds/{ids}")
     public Result getIds(@PathVariable("ids")  String ids) {
+        System.out.println(1111111111);
         userService.getIds(ids);
         return Result.success();
     }

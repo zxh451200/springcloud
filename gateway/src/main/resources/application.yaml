@@ -1,0 +1,43 @@
+spring:
+  main:
+    banner-mode: off
+  datasource:
+    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
+    username: root
+    password: "000000"
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: gateway-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      #        server-addr: 192.168.220.159:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        #        server-addr: 192.168.220.159:8848
+
+    gateway:
+      routes:
+        - id: user-service
+          uri: lb://user-service #lb://表示从注册中心获取服务
+          predicates:
+            - Path=/user/**,/api/user/**
+
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/order/**
+            - Path=/api/order/**
+
+  config:
+    import: nacos:application.yaml
+  profiles:
+    active: dev
+
+
+
+server:
+  port: 8080
+
+
