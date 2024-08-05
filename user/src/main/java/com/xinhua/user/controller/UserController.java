@@ -19,8 +19,8 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/test")
-    public Result test() {
-        return Result.success("成功");
+    public Result test(@RequestHeader(value = "xin",required = false) String xin,@RequestHeader(value = "hua",required = false) String hua) {
+        return Result.success("成功"+xin+hua);
     }
 
     @Operation(summary = "根据ids活的")

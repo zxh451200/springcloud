@@ -21,15 +21,19 @@ spring:
       routes:
         - id: user-service
           uri: lb://user-service #lb://表示从注册中心获取服务
-          predicates:
+          predicates: #路由断言,有很多
             - Path=/user/**,/api/user/**
+          filters:
+            - AddRequestHeader=hua, blue
 
         - id: order-service
           uri: lb://order-service
           predicates:
             - Path=/order/**
             - Path=/api/order/**
-
+      default-filters: #全局过滤器, 全局生效
+        - AddRequestHeader=xin, 111
+        - AddRequestHeader=hua, 222
   config:
     import: nacos:application.yaml
   profiles:
