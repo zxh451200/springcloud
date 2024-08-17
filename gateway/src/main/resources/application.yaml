@@ -34,6 +34,14 @@ spring:
       default-filters: #全局过滤器, 全局生效
         - AddRequestHeader=xin, 111
         - AddRequestHeader=hua, 222
+        - name: PrintAny
+          args:
+            name: 姓名
+            age: 222
+            address: 地址
+
+
+
   config:
     import: nacos:application.yaml
   profiles:
@@ -43,5 +51,15 @@ spring:
 
 server:
   port: 8080
-
+#jwt:
+#  token-ttl: 30m # 登录有效期
+#  password: zxh000000 # 秘钥文件密码
+#  alias: hua # 秘钥别名
+#  location: classpath:hua.jks # 秘钥地址
+#auth:
+#  exclude-paths: # 无需登录校验的路径
+#    - /search/**
+#    - /user/**
+#    - /users/login
+#    - /items/**
 

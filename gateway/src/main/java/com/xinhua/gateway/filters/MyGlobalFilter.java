@@ -20,7 +20,7 @@ public class MyGlobalFilter implements GlobalFilter, Ordered {
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         ServerHttpRequest request = exchange.getRequest();
         List<String> authorization = request.getHeaders().get("authorization");
-        System.out.println("获取头" + authorization);
+        System.out.println("GlobalFilter获取头" + authorization);
         return chain.filter(exchange);
     }
 
