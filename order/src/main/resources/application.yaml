@@ -28,3 +28,19 @@ server:
 #logging:
 #  level:
 #    root: debug
+
+
+logging:
+  level:
+    root: info
+  pattern:
+    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+  file:
+    path: logs/app.log
+  rollingpolicy:
+    file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log
+    max-file-size: 10MB
+    total-size-cap: 1GB
+    max-history: 30
+

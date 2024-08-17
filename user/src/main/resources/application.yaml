@@ -1,47 +1,9 @@
-spring:
-  main:
-    banner-mode: off
-  datasource:
-    url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
-    username: root
-    password: "000000"
-    driver-class-name: com.mysql.cj.jdbc.Driver
-  application:
-    name: user-service
-  cloud:
-    nacos:
-      discovery:
-        server-addr: 127.0.0.1:8848
-#        server-addr: 192.168.220.159:8848
-      config:
-        server-addr: 127.0.0.1:8848
-#        server-addr: 192.168.220.159:8848
-  config:
-    import: nacos:application.yaml
-  profiles:
-    active: dev
+#hua:
+#  db:
+#    host: localhost
+#    port: 3306
+#    database: test
+#    username: root
+#    password: "000000"
 
-
-
-feign:
-  okhttp:
-    enable: true
-
-server:
-  port: 8083
-
-
-logging:
-  level:
-    root: info
-  pattern:
-    console: "%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
-    file: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
-  file:
-    path: logs/app.log
-  rollingpolicy:
-    file-name-pattern: logs/app-%d{yyyy-MM-dd}.%i.log
-    max-file-size: 10MB
-    total-size-cap: 1GB
-    max-history: 30
 

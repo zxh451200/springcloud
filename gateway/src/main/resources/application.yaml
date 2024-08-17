@@ -1,6 +1,7 @@
 spring:
   main:
     banner-mode: off
+    web-application-type: reactive
   datasource:
     url: jdbc:mysql://localhost:3306/test?serverTimezone=UTC
     username: root
@@ -46,7 +47,6 @@ spring:
     import: nacos:application.yaml
   profiles:
     active: dev
-
 
 
 server:
