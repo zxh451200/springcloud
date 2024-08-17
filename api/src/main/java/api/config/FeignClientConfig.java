@@ -2,6 +2,8 @@ package api.config;
 
 
 import feign.Logger;
+import feign.RequestInterceptor;
+import feign.RequestTemplate;
 import org.springframework.context.annotation.Bean;
 
 public class FeignClientConfig {
@@ -11,5 +13,16 @@ public class FeignClientConfig {
         return Logger.Level.FULL;
     }
 
+    @Bean
+    public RequestInterceptor userInfoRequestInterceptor() {
+        return new RequestInterceptor() {
+            @Override
+            public void apply(RequestTemplate requestTemplate) {
+//                requestTemplate.header("user-info", "Bearer " + token);
+
+//                requestTemplate.header("Authorization", "Bearer " + token);
+            }
+        };
+    }
 
 }
