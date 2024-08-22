@@ -25,8 +25,8 @@ public class UserController {
 
     private final RabbitTemplate rabbitTemplate;
 
-    @GetMapping("/test")
-    public Result test(@RequestHeader(value = "xin",required = false) String xin,@RequestHeader(value = "hua",required = false) String hua) {
+    @GetMapping("/fanoutSendMsg")
+    public Result fanoutSendMsg(@RequestHeader(value = "xin",required = false) String xin,@RequestHeader(value = "hua",required = false) String hua) {
 
         for (int i = 0; i < 10; i++) {
             String queueName = "my_queue";
@@ -49,8 +49,8 @@ public class UserController {
         System.out.println("消费消息2:"+msg);
     }
 
-    @GetMapping("/sendMsg")
-    public void sendMsg(@RequestParam(name = "exchange") String exchange,@RequestParam(name = "routingKey") String routingKey,@RequestParam(name = "msg") String msg){
+    @GetMapping("/directSendMsg")
+    public void directSendMsg(@RequestParam(name = "exchange") String exchange,@RequestParam(name = "routingKey") String routingKey,@RequestParam(name = "msg") String msg){
         rabbitTemplate.convertAndSend(exchange,routingKey,msg);
     }
 
