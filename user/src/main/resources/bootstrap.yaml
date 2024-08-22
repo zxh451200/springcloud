@@ -18,10 +18,24 @@ spring:
           - data-id: share-log.yaml
             group: DEFAULT_GROUP
             refresh: true
+#          - data-id: share-seata.yaml
+#            group: DEFAULT_GROUP
+#            refresh: true
 
   #        server-addr: 192.168.220.159:8848
   config:
     import: nacos:application.yaml
+  rabbitmq:
+    host: 127.0.0.1
+    port: 5672
+    virtual-host: hua
+    username: guest
+    password: guest
+    listener:
+      simple:
+        prefetch: 1
+
+
 
 #  profiles:
 #    active: dev
@@ -29,4 +43,7 @@ spring:
 feign:
   okhttp:
     enable: true
+  sentinel:
+    enabled: true
+
 

@@ -1,7 +1,7 @@
 package com.xinhua.user.service;
 
 
-import api.client.OrderFeign;
+import api.client.OrderFeignClient;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -18,12 +18,12 @@ public class UserServiceImpl implements UserService {
 
     private final DiscoveryClient discoveryClient;
 
-    private final OrderFeign orderFeign;
+    private final OrderFeignClient orderFeignClient;
 
     @Override
     public void getIds(String ids) {
 ////        第一种
-        orderFeign.getIds();
+        orderFeignClient.getIds();
 /*
 //        第二种
         String orderServiceStr = "order-service";

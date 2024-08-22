@@ -1,6 +1,7 @@
 package api.config;
 
 
+import api.client.fallback.OrderFeignClientFallbackFactory;
 import feign.Logger;
 import feign.RequestInterceptor;
 import feign.RequestTemplate;
@@ -23,6 +24,12 @@ public class FeignClientConfig {
 //                requestTemplate.header("Authorization", "Bearer " + token);
             }
         };
+    }
+
+
+    @Bean
+    public OrderFeignClientFallbackFactory orderFeignClientFallbackFactory(){
+        return new OrderFeignClientFallbackFactory();
     }
 
 }

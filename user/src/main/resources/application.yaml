@@ -1,9 +1,18 @@
-#hua:
-#  db:
-#    host: localhost
-#    port: 3306
-#    database: test
-#    username: root
-#    password: "000000"
+hua:
+  db:
+    host: localhost
+    port: 3306
+    database: test
+    username: root
+    password: "000000"
+
+
+spring:
+  cloud:
+    sentinel:
+      transport:
+        dashboard: localhost:7091
+      http-method-specify: true
+
 
 
