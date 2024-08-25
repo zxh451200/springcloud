@@ -2,6 +2,8 @@ package com.xinhua.user;
 
 import api.config.FeignClientConfig;
 import org.mybatis.spring.annotation.MapperScan;
+import org.springframework.amqp.support.converter.Jackson2JsonMessageConverter;
+import org.springframework.amqp.support.converter.MessageConverter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
@@ -24,4 +26,9 @@ public class UserApplication {
         return new RestTemplate();
     }
 
+
+    @Bean
+    public MessageConverter messageConverter(){
+        return new Jackson2JsonMessageConverter();
+    }
 }
